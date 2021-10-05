@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas></canvas>
+
+    <script defer>
+        const canvas = document.querySelector('canvas');
+        const ctx = canvas.getContext('2d')
+
+        canvas.width = 250;
+        canvas.height = 250;
+        ctx.fillStyle = "#333";
+        ctx.fillRect(0, 0, 250, 250)
+
+        function rI(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        
+        ctx.fillStyle = `rgb(${rI(0, 255)}, ${rI(0, 255)}, ${rI(0, 255)})`;
+        ctx.beginPath();
+        ctx.arc(rI(50, 200), rI(50, 200), 10, 0, 2 * Math.PI);
+        ctx.fill();
+
+        for (let i = 0; i < 63; i++) {
+            ctx.fillStyle = `rgb(${rI(0, 255)}, ${rI(0, 255)}, ${rI(0, 255)})`;
+            ctx.beginPath();
+            ctx.arc(rI(0, 250), rI(0, 250), 5, 0, 2 * Math.PI);
+            ctx.fill();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "agario-clone",
+  "version": "1.0.0",
+  "description": "## Planning",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc -p client/tsconfig.json",
+    "browserify": "browserify client/dist/index.js -o public/scripts/main.js",
+    "cbuild": "run-s tsc browserify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dereckdemezquita/agario-clone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dereckdemezquita/agario-clone/issues"
+  },
+  "homepage": "https://github.com/dereckdemezquita/agario-clone#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.12",
+    "@types/ws": "^7.4.5"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "ws": "^7.5.0"
+  }
+}
