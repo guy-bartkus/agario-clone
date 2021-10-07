@@ -4,27 +4,40 @@
   "description": "## Planning",
   "main": "index.js",
   "scripts": {
-    "tsc": "tsc -p client/tsconfig.json",
-    "browserify": "browserify client/dist/index.js -o public/scripts/main.js",
-    "cbuild": "run-s tsc browserify"
+    "start": "node dist/index.js",
+    "sbuild": "tsc --p server",
+    "cbuild": "webpack --config client/webpack.config.js --mode development",
+    "cbuildp": "webpack --config client/webpack.config.js --mode production",
+    "nodemon": "nodemon --watch client -e ts,html,scss --exec npm run cbuild"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dereckdemezquita/agario-clone.git"
+    "url": "git+https://github.com/guy-bartkus/agario-clone.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dereckdemezquita/agario-clone/issues"
+    "url": "https://github.com/guy-bartkus/agario-clone/issues"
   },
-  "homepage": "https://github.com/dereckdemezquita/agario-clone#readme",
+  "homepage": "https://github.com/guy-bartkus/agario-clone#readme",
   "devDependencies": {
-    "@types/express": "^4.17.12",
-    "@types/ws": "^7.4.5"
+    "@types/express": "^4.17.13",
+    "@types/ws": "^8.2.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.3.0",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.4.1",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.42.1",
+    "sass-loader": "^12.1.0",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.4.3",
+    "webpack": "^5.57.1",
+    "webpack-cli": "^4.9.0"
   },
   "dependencies": {
     "express": "^4.17.1",
-    "ws": "^7.5.0"
+    "ws": "^8.2.3"
   }
 }

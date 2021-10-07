@@ -11,7 +11,7 @@ app.use(express.static(join(__dirname, "../", "../", "public")));
 
 console.log(__dirname);
 
-const server = app.listen(81, '0.0.0.0', () => { // returns a server
+const server = app.listen(6969, '0.0.0.0', () => { // returns a server
     console.log("Ready!");
 });
 

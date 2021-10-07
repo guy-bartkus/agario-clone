@@ -1,4 +1,3 @@
-
 import { Color, Vec2, randInt } from "./math";
 import settings from './settings';
 
