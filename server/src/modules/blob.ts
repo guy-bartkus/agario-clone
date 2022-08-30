@@ -53,10 +53,10 @@ export default class Blob {
             box.tL = blob.pos.sub(new Vec2(blob.radius, blob.radius));
             box.bR = blob.pos.add(new Vec2(blob.radius, blob.radius));
 
-            box.qTL = new Vec2(Math.floor(box.tL.x/256), Math.floor(box.tL.y/256));
-            box.qBR = new Vec2(Math.floor(box.bR.x/256), Math.floor(box.bR.y/256));
+            box.qTL = new Vec2(Math.floor(box.tL.x/settings.spawnChunkSize), Math.floor(box.tL.y/settings.spawnChunkSize));
+            box.qBR = new Vec2(Math.floor(box.bR.x/settings.spawnChunkSize), Math.floor(box.bR.y/settings.spawnChunkSize));
 
-            const rows = settings.mapSize / 256;
+            const rows = settings.mapSize / settings.spawnChunkSize;
 
             for(let x = box.qTL.x; x < box.qBR.x; x++) {
                 for(let y = box.qTL.y; y < box.qBR.y; y++) {

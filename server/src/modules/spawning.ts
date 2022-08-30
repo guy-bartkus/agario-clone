@@ -3,7 +3,7 @@ import Player from './player';
 import { Vec2, randInt } from './math';
 
 export const getSpawnablePos = (players: Player[]): number[] => {
-    const chunks = settings.mapSize / 32;
+    const chunks = settings.mapSize / settings.spawnChunkSize;
     const free: number[] = [];
 
     for(let i = 0; i < chunks**2; i++) {
