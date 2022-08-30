@@ -23,6 +23,7 @@ const blobs: Blob[] = [];
 wss.on('connection', (socket, req) => {
     const player = new Player(socket, "Unnamed Player", new Vec2(randInt(1000, 1200), randInt(1000, 1200)));
     players.push(player);
+    console.log(`${player.name} joined!`);
 });
 
 // Timing things; nightmare! YEET

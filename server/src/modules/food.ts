@@ -1,4 +1,3 @@
-
 import Blob from "./blob";
 import { Vec2 } from "./math";
 

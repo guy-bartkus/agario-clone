@@ -1,5 +1,5 @@
 export default {
-    mapSize: 1024 * 8,
+    mapSize: 1024 * 2,
     startMass: 10,
     foodInitial: 0.25, // Percent of max possible food
     foodSpawnRate: 10, // Milliseconds

@@ -1,8 +1,8 @@
 import { resizeCanvas } from './modules/scaling';
-const ws = new WebSocket(`ws://${window.location.hostname}:81`);
+const ws = new WebSocket(`ws://${window.location.hostname}:6969`);
 
 let self: any = { pos: { x: 0, y: 0 } };
-const rCanvas = document.getElementById('main') as HTMLCanvasElement;
+const rCanvas = <HTMLCanvasElement>document.getElementById('main');
 const rCtx = rCanvas.getContext('2d') as CanvasRenderingContext2D;
 
 const mCanvas = document.createElement("canvas");

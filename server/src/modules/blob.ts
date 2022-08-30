@@ -7,7 +7,7 @@ export default class Blob {
     public quadrants: number[] = [];
     public velocity: Vec2 = new Vec2();
     public direction: Vec2 = new Vec2();
-    public color: Color = Color.colors[randInt(0, Color.colors.length - 1)];
+    public color: Color = Color.random();
 
     destroy() {
         

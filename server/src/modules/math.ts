@@ -1,6 +1,24 @@
+export const randInt = (min: number, max: number): number => {
+    return Math.floor(Math.random() * ((max+1) - min) + min);
+}
+
+
 
 export class Color {
-    constructor(public r: number = 0, public g: number = 0, public b: number = 0) { }
+    r: number;
+    g: number;
+    b: number;
+
+    constructor(r: number, g: number, b: number) {
+        this.r = r;
+        this.g = g;
+        this.b = b;
+
+    }
+
+    static random(): Color {
+        return Color.colors[randInt(0, Color.colors.length - 1)];
+    }
 
     static colors: Color[] = [
         new Color(255, 0, 0), new Color(0, 255, 0), new Color(0, 0, 255), 
@@ -8,35 +26,71 @@ export class Color {
     ];
 }
 
+
+const randColor = Color.random();
+const color = new Color(0, 50, 255);
+
+console.log(randColor, color);
+
 export class Vec2 {
-    constructor(public x: number = 0, public y: number = 0) {  }
+    x: number;
+    y: number;
 
-    add(otherVec: Vec2) {
-        return new Vec2(this.x + otherVec.x, this.y + otherVec.y);
+    constructor(x: number = 0, y: number = 0) {
+        this.x = x;
+        this.y = y;
     }
 
-    sub(otherVec: Vec2) {
-        return new Vec2(this.x - otherVec.x, this.y - otherVec.y);
+    add(vec2: Vec2): Vec2 {
+        return new Vec2(this.x + vec2.x, this.y + vec2.y);
     }
 
-    div(otherVec: Vec2) {
-        return new Vec2(this.x / otherVec.x, this.y / otherVec.y);
+    sub(vec2: Vec2): Vec2 {
+        return new Vec2(this.x - vec2.x, this.y - vec2.y);
     }
 
-    mul(otherVec: Vec2) {
-        return new Vec2(this.x * otherVec.x, this.y * otherVec.y);
+    mul(scalar: number): Vec2 {
+        return new Vec2(this.x * scalar, this.y * scalar);
     }
 
-    distance(otherVec: Vec2): number {
-        return Math.sqrt((Math.abs(this.x - otherVec.x))**2 + (Math.abs(this.y - otherVec.y))**2);
+    div(vec2: Vec2): Vec2 {
+        return new Vec2(this.x / vec2.x, this.y / vec2.y);
     }
 
-    normalize(magnitude: number) {
-        this.x /= magnitude
-        this.y /= magnitude
-    }
-}
+    normalize(): Vec2 {
+        const m = Math.sqrt(this.x ** 2 + this.y ** 2);
 
-export const randInt = (min: number, max: number): number => {
-    return Math.random() * (max - min) + min;
+        return new Vec2(this.x / m, this.y / m);
+    }
+
+    distance(vec2: Vec2): number {
+        const lX = this.x - vec2.x;
+        const lY = this.y - vec2.y;
+
+        return Math.sqrt(lX ** 2 + lY ** 2);
+    }
+
+    direction(vec2: Vec2): Vec2 {
+        return this.sub(vec2).normalize();
+    }
+
+    rotate(ang: number): Vec2 {
+        return new Vec2(this.x * Math.cos(ang) - this.y * Math.sin(ang), this.x * Math.sin(ang) + this.y * Math.cos(ang));
+    }
+
+    angleBetween(vec2: Vec2): number {
+        return Math.atan2(vec2.y*this.x - vec2.x*this.y, vec2.x*this.x + vec2.y*this.y);
+    }
+
+    toAngle(): number {
+        return Math.atan2(this.y, this.x);
+    }
+
+    get mag(): number {
+        return Math.sqrt(this.x ** 2 + this.y ** 2);
+    }
+
+    static fromAngle(rads: number): Vec2 {
+        return new Vec2(Math.cos(rads), Math.sin(rads));
+    }
 }

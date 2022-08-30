@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = {
+    mapSize: 1024 * 8,
+    startMass: 10,
+    foodInitial: 0.25,
+    foodSpawnRate: 10,
+    foodDensity: 64,
+    evapRate: 10 // Evaporate all players and blobs every x seconds
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic2V0dGluZ3MuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zcmMvbW9kdWxlcy9zZXR0aW5ncy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLGtCQUFlO0lBQ1gsT0FBTyxFQUFFLElBQUksR0FBRyxDQUFDO0lBQ2pCLFNBQVMsRUFBRSxFQUFFO0lBQ2IsV0FBVyxFQUFFLElBQUk7SUFDakIsYUFBYSxFQUFFLEVBQUU7SUFDakIsV0FBVyxFQUFFLEVBQUU7SUFDZixRQUFRLEVBQUUsRUFBRSxDQUFDLGtEQUFrRDtDQUNsRSxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGRlZmF1bHQge1xuICAgIG1hcFNpemU6IDEwMjQgKiA4LFxuICAgIHN0YXJ0TWFzczogMTAsXG4gICAgZm9vZEluaXRpYWw6IDAuMjUsIC8vIFBlcmNlbnQgb2YgbWF4IHBvc3NpYmxlIGZvb2RcbiAgICBmb29kU3Bhd25SYXRlOiAxMCwgLy8gTWlsbGlzZWNvbmRzXG4gICAgZm9vZERlbnNpdHk6IDY0LCAvLyBNYXggZm9vZCBwZXIgY2h1bmtcbiAgICBldmFwUmF0ZTogMTAgLy8gRXZhcG9yYXRlIGFsbCBwbGF5ZXJzIGFuZCBibG9icyBldmVyeSB4IHNlY29uZHNcbn1cbiJdfQ==

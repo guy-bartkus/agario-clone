@@ -4,10 +4,9 @@
   "description": "## Planning",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/index.js",
+    "start": "node server/dist/index.js",
     "sbuild": "tsc --p server",
-    "cbuild": "webpack --config client/webpack.config.js --mode development",
-    "cbuildp": "webpack --config client/webpack.config.js --mode production",
+    "cbuild": "browserify client/src/index.ts --debug -p [ tsify -p client/src ] > public/bundle.js",
     "nodemon": "nodemon --watch client -e ts,html,scss --exec npm run cbuild"
   },
   "repository": {
@@ -38,6 +37,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "tsify": "^5.0.4",
     "ws": "^8.2.3"
   }
 }

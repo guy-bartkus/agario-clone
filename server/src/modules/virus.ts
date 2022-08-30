@@ -1,4 +1,3 @@
-
 import Blob from "./blob";
 
 class Virus extends Blob {
